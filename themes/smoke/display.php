@@ -11,6 +11,8 @@
 <div class="FA_overall_container_smoke FA_slider <?php the_slider_color();?>" style="<?php the_slider_width();?>"  id="<?php echo $FA_slider_id;?>">	
 	<div class="FA_featured_articles" style="<?php the_slider_height();?>">
 	<?php foreach ($postslist as $i => $post):?>
+
+		<a href="<?php echo get_permalink($post->ID); ?>">
 		<div class="FA_article <?php the_fa_class();?>" style="<?php the_fa_background(); ?>; <?php the_slider_height();?>; <?php if($i > 0):?> display:none;<?php endif;?>">
 			<?php fa_content_wrapper('<div class="FA_wrap">');?>	
 				<?php the_fa_title('<h2>', '</h2>');?>
@@ -19,6 +21,7 @@
                 <?php the_fa_read_more();?>
             <?php fa_content_wrapper('</div>');?>			
 		</div>
+		</a>
 	<?php endforeach;?>		
     <a href="#" title="<?php __('Previous post');?>" class="FA_back">&lt;</a>
     <a href="#" title="<?php __('Next post');?>" class="FA_next">&gt;</a>
